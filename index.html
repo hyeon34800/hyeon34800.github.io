@@ -36,7 +36,7 @@ img{max-width:100%}
 .contact{list-style:none;margin:26px 0 0;padding:0;display:grid;gap:12px}
 .contact a{display:inline-flex;align-items:center;gap:10px;font-size:15px;color:var(--text);transition:color .15s ease}
 .contact a:hover{color:var(--accent)}
-.lbl{font-size:12px;font-weight:700;color:var(--muted);border:1px solid var(--line);border-radius:5px;padding:0 6px;line-height:1.7;transition:color .15s ease,border-color .15s ease}
+.lbl{flex:none;min-width:52px;text-align:center;font-size:12px;font-weight:700;color:var(--muted);border:1px solid var(--line);border-radius:5px;padding:0 6px;line-height:1.7;transition:color .15s ease,border-color .15s ease}
 .contact a:hover .lbl{color:var(--accent);border-color:var(--accent)}
 .contact a:focus-visible,.toc a:focus-visible,a.title:focus-visible,.inline-link:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:3px}
 
@@ -128,6 +128,11 @@ footer{margin-top:68px;font-size:14px;color:var(--faint)}
     </div>
     <ul class="contact">
       <li>
+        <a href="mailto:hyeon3480@pukyong.ac.kr">
+          <span class="lbl">Email</span>hyeon3480@pukyong.ac.kr
+        </a>
+      </li>
+      <li>
         <a href="https://orcid.org/0009-0002-6307-6806" target="_blank" rel="noopener">
           <span class="lbl">ORCID</span>0009-0002-6307-6806
         </a>
@@ -199,6 +204,7 @@ footer{margin-top:68px;font-size:14px;color:var(--faint)}
         <time class="when">2026.11</time>
         <div class="what">
           <p class="title">다시기 정합 위성영상을 이용한 LoFTR 파인튜닝의 좌표 편향 진단 및 Dual-Crop Jitter 기반 완화</p>
+          <p class="authors"><b>변상현</b>, 지준화</p>
           <p class="venue">2026 (사)GeoAI데이터학회 추계학술대회</p>
         </div>
       </article>
@@ -206,7 +212,7 @@ footer{margin-top:68px;font-size:14px;color:var(--faint)}
 
     <section id="awards">
       <span class="eyebrow">Honors &amp; Awards</span>
-      <h2>수상 · 장학<span class="count">6</span></h2>
+      <h2>수상 · 장학<span class="count">7</span></h2>
       <article class="entry">
         <time class="when">2026.11</time>
         <div class="what">
@@ -229,6 +235,14 @@ footer{margin-top:68px;font-size:14px;color:var(--faint)}
         <div class="what">
           <p class="title">2026 새싹연구 지원사업: SpaceEye-T 영상 활용 경진대회</p>
           <p class="venue">대한원격탐사학회 · 우수상</p>
+          <p class="detail">“SpaceEye-T를 이용한 파운데이션 모델 기반 연안 모자반 유입 및 해안선 변화 탐지 기술”</p>
+        </div>
+      </article>
+      <article class="entry">
+        <time class="when">2026.02</time>
+        <div class="what">
+          <p class="title">자랑스러운 정보융합인</p>
+          <p class="venue">국립부경대학교 정보융합대학 · 봉사활동 우수자</p>
         </div>
       </article>
       <article class="entry">
@@ -236,6 +250,7 @@ footer{margin-top:68px;font-size:14px;color:var(--faint)}
         <div class="what">
           <p class="title">2025학년도 정보융합대학 융합캡스톤디자인 경진대회</p>
           <p class="venue">국립부경대학교 · 최우수상</p>
+          <p class="detail">“부산광역시 사하구 도로먼지 흡입 차량 운행 경로 최적화”</p>
         </div>
       </article>
       <article class="entry">
