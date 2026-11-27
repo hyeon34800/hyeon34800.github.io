@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>변상현 | Sang-Hyeon Byun</title>
+<meta name="description" content="변상현 (Sang-Hyeon Byun) — 국립부경대학교 빅데이터융합학과 석사과정. 위성영상, 딥러닝, 파운데이션 모델 연구.">
+<meta property="og:title" content="변상현 | Sang-Hyeon Byun">
+<meta property="og:description" content="위성영상 · 딥러닝 · 파운데이션 모델 연구">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Noto+Sans+KR:wght@400;500;600;700&display=swap">
+<style>
+/* 참고 홈페이지(ki-yeong.github.io)와 같은 구조
+   왼쪽: 사진 · 이름 · 소속 · 연락처 · 목차 (스크롤 시 고정)
+   오른쪽: 학력 → 논문 → 학회 발표 → 수상·장학 → 연구 과제 → 활동 → 자격
+   각 항목: 왼쪽 날짜 칸 + 제목 · 저자 · 발표처 · 세부 내용
+   900px 이하: 1단, 사진은 이름 옆 작은 크기 */
+:root{--bg:#fbfbfa;--text:#1a1a1e;--muted:#5f5f6a;--faint:#94949e;--line:#e6e6ea;--accent:#1d5f8c;--photo-ring:#e4e4e8;color-scheme:light}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:40px}
+body{margin:0;background:var(--bg);color:var(--text);font-family:"Noto Sans","Noto Sans KR",-apple-system,BlinkMacSystemFont,system-ui,"Apple SD Gothic Neo","Malgun Gothic",sans-serif;font-size:17px;line-height:1.7;letter-spacing:-.005em;word-break:keep-all;overflow-wrap:break-word;-webkit-font-smoothing:antialiased;overflow-x:clip}
+a{color:inherit;text-decoration:none}
+p{margin:0}
+img{max-width:100%}
+
+.wrap{max-width:1200px;margin:0 auto;padding:80px 40px 104px;display:grid;grid-template-columns:280px minmax(0,1fr);gap:88px}
+
+/* 왼쪽 프로필: 폭 = 가장 긴 글줄, 사진은 그 폭에 맞춤 */
+.side{position:sticky;top:80px;align-self:start;width:fit-content;max-width:100%}
+.photo{display:block;width:0;min-width:100%;aspect-ratio:1;object-fit:cover;object-position:50% 10%;border-radius:32px;background:#fff;box-shadow:0 0 0 1px var(--photo-ring)}
+.name{margin:30px 0 0;font-size:32px;font-weight:700;letter-spacing:-.02em;line-height:1.25}
+.name-en{display:block;margin-top:6px;font-size:16.5px;font-weight:500;color:var(--muted);letter-spacing:0}
+.role{margin-top:18px;font-size:15.5px;color:var(--muted);line-height:1.6}
+.contact{list-style:none;margin:26px 0 0;padding:0;display:grid;gap:12px}
+.contact a{display:inline-flex;align-items:center;gap:10px;font-size:15px;color:var(--text);transition:color .15s ease}
+.contact a:hover{color:var(--accent)}
+.lbl{font-size:12px;font-weight:700;color:var(--muted);border:1px solid var(--line);border-radius:5px;padding:0 6px;line-height:1.7;transition:color .15s ease,border-color .15s ease}
+.contact a:hover .lbl{color:var(--accent);border-color:var(--accent)}
+.contact a:focus-visible,.toc a:focus-visible,a.title:focus-visible,.inline-link:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:3px}
+
+.toc{margin-top:44px;padding-top:28px;border-top:1px solid var(--line);display:grid;gap:4px}
+.toc a{position:relative;padding:7px 0 7px 16px;font-size:17px;color:var(--faint);transition:color .15s ease}
+.toc a::before{content:"";position:absolute;left:0;top:50%;width:2px;height:0;background:var(--accent);transform:translateY(-50%);transition:height .2s ease}
+.toc a:hover{color:var(--text)}
+.toc a.active{color:var(--text);font-weight:600}
+.toc a.active::before{height:17px}
+
+/* 본문 */
+main{min-width:0}
+section{padding-bottom:68px;margin-bottom:68px;border-bottom:1px solid var(--line)}
+section:last-of-type{border-bottom:0;margin-bottom:0}
+.eyebrow{display:block;margin-bottom:6px;font-size:12.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
+h2{margin:0 0 36px;font-size:27px;font-weight:700;letter-spacing:-.02em;line-height:1.3}
+h2 .count{margin-left:7px;font-size:16px;font-weight:600;color:var(--faint);vertical-align:3px}
+h3.group{margin:44px 0 22px;font-size:15px;font-weight:600;color:var(--muted);display:flex;align-items:center;gap:12px}
+h3.group:first-of-type{margin-top:0}
+h3.group span{font-weight:500;color:var(--faint)}
+h3.group::after{content:"";flex:1;height:1px;background:var(--line)}
+
+.entry{display:grid;grid-template-columns:104px minmax(0,1fr);grid-template-areas:"when what";column-gap:24px;margin-bottom:30px}
+.entry:last-child{margin-bottom:0}
+.when{grid-area:when;font-size:15px;color:var(--faint);font-variant-numeric:tabular-nums;padding-top:3px;white-space:nowrap}
+/* 기간은 날짜 칸에 한 줄로 안 들어가므로 "–" 뒤에서 줄바꿈 */
+.when.range{white-space:normal;line-height:1.6}
+.what{grid-area:what;min-width:0}
+.title{display:inline;font-size:18px;font-weight:600;line-height:1.55;letter-spacing:-.01em}
+.title .en{color:var(--faint);font-weight:500}
+a.title{background-image:linear-gradient(var(--accent),var(--accent));background-size:0 1px;background-repeat:no-repeat;background-position:0 100%;transition:color .15s ease,background-size .25s ease}
+a.title:hover{color:var(--accent);background-size:100% 1px}
+.title-ko{margin-top:4px;font-size:16px;color:var(--muted)}
+.authors{margin-top:7px;font-size:16.5px;color:var(--muted)}
+.authors b{color:var(--text);font-weight:600}
+.venue{margin-top:4px;font-size:16.5px;color:var(--muted)}
+.venue i{font-style:italic}
+.nw{white-space:nowrap}
+.detail{margin-top:4px;font-size:16.5px;color:var(--muted)}
+.inline-link{color:var(--text);text-decoration:underline;text-decoration-color:var(--faint);text-decoration-thickness:1px;text-underline-offset:4px;transition:color .15s ease,text-decoration-color .15s ease}
+.inline-link:hover{color:var(--accent);text-decoration-color:var(--accent)}
+
+footer{margin-top:68px;font-size:14px;color:var(--faint)}
+
+/* 모바일 */
+@media (max-width:900px){
+  body{font-size:16px}
+  .wrap{grid-template-columns:minmax(0,1fr);gap:0;padding:40px 20px 72px}
+  .side{position:static;width:auto;display:grid;grid-template-columns:96px minmax(0,1fr);column-gap:20px;align-items:center;margin-bottom:52px}
+  .photo{width:96px;min-width:0;border-radius:22px;grid-row:span 2}
+  .name{margin:0;font-size:26px}
+  .name-en{font-size:15px}
+  .role{margin-top:6px;font-size:14.5px}
+  .contact{grid-column:1 / -1;margin-top:24px}
+  .toc{display:none}
+  section{padding-bottom:52px;margin-bottom:52px}
+  h2{font-size:24px;margin-bottom:28px}
+  .entry{grid-template-columns:minmax(0,1fr);grid-template-areas:"when" "what"}
+  .title{font-size:17px}
+  .authors,.venue,.detail{font-size:15.5px}
+  .title-ko{font-size:15px}
+  .when{font-size:14px;padding-top:0}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before{transition:none!important}
+}
+
+/* 인쇄 */
+@media print{
+  :root{--bg:#fff;--text:#000;--muted:#333;--faint:#555;--line:#ccc;--accent:#000}
+  .wrap{display:block;padding:0}
+  .side{position:static}
+  .photo{width:160px;min-width:0}
+  .toc{display:none}
+  section{padding-bottom:24px;margin-bottom:24px}
+  .entry{break-inside:avoid}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <aside class="side">
+    <img class="photo" src="profile.jpg" alt="변상현 프로필 사진">
+    <div>
+      <h1 class="name">변상현<span class="name-en">Sang-Hyeon Byun</span></h1>
+      <p class="role">국립부경대학교 빅데이터융합학과<br>석사과정</p>
+    </div>
+    <ul class="contact">
+      <li>
+        <a href="https://orcid.org/0009-0002-6307-6806" target="_blank" rel="noopener">
+          <span class="lbl">ORCID</span>0009-0002-6307-6806
+        </a>
+      </li>
+    </ul>
+    <nav class="toc" aria-label="목차">
+      <a href="#education">학력</a>
+      <a href="#publications">논문</a>
+      <a href="#presentations">학회 발표</a>
+      <a href="#awards">수상 · 장학</a>
+      <a href="#projects">연구 과제</a>
+      <a href="#experience">활동</a>
+      <a href="#certifications">자격</a>
+    </nav>
+  </aside>
+
+  <main>
+
+    <section id="education">
+      <span class="eyebrow">Education</span>
+      <h2>학력</h2>
+      <article class="entry">
+        <time class="when">2026 –</time>
+        <div class="what">
+          <p class="title">석사과정 <span class="en">M.S. Student</span></p>
+          <p class="venue">국립부경대학교 빅데이터융합학과</p>
+          <p class="detail">지도교수: <a class="inline-link" href="https://igdsl.github.io/" target="_blank" rel="noopener">지준화</a></p>
+        </div>
+      </article>
+      <article class="entry">
+        <time class="when">2021 – 2026</time>
+        <div class="what">
+          <p class="title">학사 <span class="en">B.S.</span></p>
+          <p class="venue">국립부경대학교 데이터정보과학부 빅데이터융합전공</p>
+        </div>
+      </article>
+    </section>
+
+    <section id="publications">
+      <span class="eyebrow">Publications</span>
+      <h2>논문<span class="count">1</span></h2>
+
+      <h3 class="group">국내 학술지 <span>Domestic Journals</span></h3>
+      <article class="entry">
+        <time class="when">2026.03</time>
+        <div class="what">
+          <a class="title" href="https://doi.org/10.20481/kscdp.2026.13.1.19" target="_blank" rel="noopener">Maritime Route Width Estimation Based on Traffic Distribution in Korea Strait Using Large-Scale AIS Data</a>
+          <p class="title-ko">AIS 빅데이터를 활용한 해상교통량 기반 대한해협 항로 폭 산출 연구</p>
+          <p class="authors"><b>Sang-Hyeon Byun</b>, Min An, Hong-Yeon Cho, Jeong-Seok Lee</p>
+          <p class="venue"><i>Journal of Coastal Disaster Prevention</i> (한국연안방재학회지), vol. 13, no. 1, <span class="nw">pp. 19–31</span></p>
+        </div>
+      </article>
+    </section>
+
+    <section id="presentations">
+      <span class="eyebrow">Presentations</span>
+      <h2>학회 발표<span class="count">2</span></h2>
+
+      <h3 class="group">국내 학술대회 <span>Domestic</span></h3>
+      <article class="entry">
+        <time class="when">2026.11</time>
+        <div class="what">
+          <p class="title">표 데이터 파운데이션 모델을 활용한 해양 관측 자료 분석</p>
+          <p class="authors"><b>변상현</b>, 진동혁, 문기영</p>
+          <p class="venue">2026년도 한국해양학회 추계학술대회 · 포스터</p>
+        </div>
+      </article>
+      <article class="entry">
+        <time class="when">2026.11</time>
+        <div class="what">
+          <p class="title">다시기 정합 위성영상을 이용한 LoFTR 파인튜닝의 좌표 편향 진단 및 Dual-Crop Jitter 기반 완화</p>
+          <p class="venue">2026 (사)GeoAI데이터학회 추계학술대회</p>
+        </div>
+      </article>
+    </section>
+
+    <section id="awards">
+      <span class="eyebrow">Honors &amp; Awards</span>
+      <h2>수상 · 장학<span class="count">6</span></h2>
+      <article class="entry">
+        <time class="when">2026.11</time>
+        <div class="what">
+          <p class="title">2026 스페이스 해커톤</p>
+          <p class="venue">한국항공우주연구원 · 최우수상 (원장상)</p>
+          <p class="detail">부문 1 위성정보 빅데이터 활용 아이디어</p>
+          <p class="detail">“농림위성이 바라볼 숲: 광학·SAR 위성과 파운데이션 모델로 평가한 산불 피해목 제거의 회복 효과”</p>
+        </div>
+      </article>
+      <article class="entry">
+        <time class="when">2026.11</time>
+        <div class="what">
+          <p class="title">2026 해양과학 AI×빅데이터 경진대회</p>
+          <p class="venue">해양수산과학기술진흥원 · 원장상</p>
+          <p class="detail">대학부 · 팀장(본선 발표)</p>
+        </div>
+      </article>
+      <article class="entry">
+        <time class="when">2026.10</time>
+        <div class="what">
+          <p class="title">2026 새싹연구 지원사업: SpaceEye-T 영상 활용 경진대회</p>
+          <p class="venue">대한원격탐사학회 · 우수상</p>
+        </div>
+      </article>
+      <article class="entry">
+        <time class="when">2025.12</time>
+        <div class="what">
+          <p class="title">2025학년도 정보융합대학 융합캡스톤디자인 경진대회</p>
+          <p class="venue">국립부경대학교 · 최우수상</p>
+        </div>
+      </article>
+      <article class="entry">
+        <time class="when">2024.12</time>
+        <div class="what">
+          <p class="title">빅데이터융합전공 지역사회문제 해결 연구모임</p>
+          <p class="venue">국립부경대학교 · 우수상 (빅데이터융합전공장상)</p>
+          <p class="detail">“부산광역시 불법 주정차 분석 및 해결 방안”</p>
+        </div>
+      </article>
+      <article class="entry">
+        <time class="when">2024.11</time>
+        <div class="what">
+          <p class="title">데이터정보과학부 데이터분석 공모전</p>
+          <p class="venue">국립부경대학교 · 최우수상 (정보융합대학장상)</p>
+          <p class="detail">“포트홀 위험도 예측 및 방안 제시”</p>
+        </div>
+      </article>
+    </section>
+
+    <section id="projects">
+      <span class="eyebrow">Research Projects</span>
+      <h2>연구 과제<span class="count">1</span></h2>
+      <article class="entry">
+        <time class="when range">2026.07&nbsp;– 2026.12</time>
+        <div class="what">
+          <p class="title">다종 위성영상을 이용한 해빙농도 및 이동벡터 산출 기술 개발</p>
+          <p class="venue">한국항공우주연구원 (KARI)</p>
+        </div>
+      </article>
+    </section>
+
+    <section id="experience">
+      <span class="eyebrow">Experience</span>
+      <h2>활동</h2>
+      <article class="entry">
+        <time class="when range">2026.03&nbsp;– 2026.08</time>
+        <div class="what">
+          <p class="title">인공지능 부트캠프 중급과정 이수</p>
+          <p class="venue">국립부경대학교 첨단산업 인재양성 부트캠프</p>
+        </div>
+      </article>
+      <article class="entry">
+        <time class="when range">2025.09&nbsp;– 2026.12</time>
+        <div class="what">
+          <p class="title">빅데이터융합전공 전공멘토 학생</p>
+          <p class="venue">국립부경대학교 대학생활멘토단</p>
+        </div>
+      </article>
+      <article class="entry">
+        <time class="when range">2025.07&nbsp;– 2025.12</time>
+        <div class="what">
+          <p class="title">감염병관리 지원단 챗봇 제작 데이터 전처리</p>
+          <p class="venue">국립부경대학교 보건의료 빅데이터 연구실</p>
+        </div>
+      </article>
+      <article class="entry">
+        <time class="when range">2025.07&nbsp;– 2025.08</time>
+        <div class="what">
+          <p class="title">하계 실습생</p>
+          <p class="venue">한국해양과학기술원 (KIOST)</p>
+          <p class="detail">2025.07.01 – 2025.08.27</p>
+        </div>
+      </article>
+      <article class="entry">
+        <time class="when">2025.03 –</time>
+        <div class="what">
+          <p class="title">지능형 공간데이터과학 연구실 (iGDSL)</p>
+          <p class="venue">국립부경대학교</p>
+          <p class="detail">인공지능 기반 위성영상 변화탐지 및 위성영상 정합 연구</p>
+        </div>
+      </article>
+      <article class="entry">
+        <time class="when range">2024.10&nbsp;– 2025.01</time>
+        <div class="what">
+          <p class="title">감염병 데이터 전처리</p>
+          <p class="venue">국립부경대학교 보건의료 빅데이터 연구실</p>
+          <p class="detail">부산대학교병원 협력 COVID-19 데이터 전처리 및 분석 지원</p>
+        </div>
+      </article>
+      <article class="entry">
+        <time class="when range">2024.03&nbsp;– 2025.08</time>
+        <div class="what">
+          <p class="title">“빅파이” 코딩 스터디 그룹 부회장</p>
+          <p class="venue">국립부경대학교 빅데이터융합전공 학과 동아리</p>
+          <p class="detail">스터디 운영 및 학습 커리큘럼 기획</p>
+        </div>
+      </article>
+    </section>
+
+    <section id="certifications">
+      <span class="eyebrow">Certifications</span>
+      <h2>자격</h2>
+      <article class="entry">
+        <time class="when">2024.09</time>
+        <div class="what">
+          <p class="title">데이터분석 준전문가 (ADsP)</p>
+          <p class="venue">한국데이터산업진흥원</p>
+        </div>
+      </article>
+    </section>
+
+    <footer>최종 업데이트 2026.11</footer>
+  </main>
+</div>
+
+<script>
+{
+  const links = Array.from(document.querySelectorAll('.toc a'));
+  const sections = Array.from(document.querySelectorAll('main section[id]'));
+
+  // 제목 옆 개수: 항목을 추가·삭제하면 자동으로 맞춰짐
+  for (const s of sections) {
+    const c = s.querySelector('h2 .count');
+    if (c) c.textContent = String(s.querySelectorAll('article.entry').length);
+  }
+
+  // 스크롤 위치에 맞춰 목차 강조
+  const setActive = (id) => {
+    for (const a of links) a.classList.toggle('active', a.getAttribute('href') === '#' + id);
+  };
+  const update = () => {
+    if (!sections.length) return;
+    const atBottom = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 4;
+    if (atBottom) { setActive(sections[sections.length - 1].id); return; }
+    const line = window.innerHeight * 0.35;
+    let current = sections[0].id;
+    for (const s of sections) if (s.getBoundingClientRect().top <= line) current = s.id;
+    setActive(current);
+  };
+  window.addEventListener('scroll', update, { passive: true });
+  window.addEventListener('resize', update);
+  update();
+}
+</script>
+</body>
+</html>
